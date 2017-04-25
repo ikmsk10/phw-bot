@@ -1,2 +1,9 @@
 build/*
 cmake-build-debug/*
+ext/opencv_contrib/*
+Будет удалено build/
+Будет удалено cmake-build-debug/
+
+Будет удалено src/CardWatch.cpp
+Будет удалено src/CardWatch.h
+Будет удалено src/python-nw/

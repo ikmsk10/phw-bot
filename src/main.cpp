@@ -3,10 +3,11 @@
 //
 #include <cstdlib>
 #include <cstdio>
+#include <iostream>
 
 
-#include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
+#include "CardWatch.h"
 
 using namespace cv;
 using namespace std;
@@ -23,7 +24,14 @@ const char * win_name = "Pyramids image";
 int main(int argc, char *argv[])
 {
     printf("Starting phw-bot service...");
-    image = cvLoadImage( "../../assets/tbs_1.png",1 ); // Loads the test image
+    LinearLayer l(5,5);
+    uchar data[5] = {2,3,4,5,0};
+    void * L2 = new cv::Mat1b(1,5,data);
+    l.forward(L2);
+//    cv::Mat1b * tmp = new cv::Mat1b(5,1);
+//    l.forward((void *)tmp);
+//    std::cout << l.forward((void *)tmp);
+    /*image = cvLoadImage( "../../assets/tbs_1.png",1 ); // Loads the test image
 
     assert( image != 0 );
 
@@ -68,6 +76,6 @@ int main(int argc, char *argv[])
     cvReleaseImage(&bin);
     cvReleaseImage(&dst);
     // удаляем окна
-    cvDestroyAllWindows();
+    cvDestroyAllWindows();*/
     return EXIT_SUCCESS;
 }

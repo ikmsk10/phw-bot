@@ -1,0 +1,15 @@
+version: '2'
+services:
+  web-frontend:
+    image: python:latest
+    container_name: ekans-1.0
+    ports:
+      - "8008:8008"
+      - "5555:5555"
+      - "4003:4003"
+      - "4004:4004"
+    tty: true
+    volumes:
+      - ./:/opt/app
+    environment:
+      TERM: linux
