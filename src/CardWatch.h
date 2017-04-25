@@ -13,27 +13,27 @@
 class ILayer {
 
 protected:
-    virtual void * forward(void *) = 0;
-    virtual void * backward(void *) = 0;
+    virtual void * forward(void * pVec1r32f = NULL) = 0;
+    virtual void * backward(void * = NULL) = 0;
 };
 
 class LinearLayer : ILayer{
 protected:
     cv::Mat1f * theta;
 public:
-    virtual void *forward(void *matx);
+    virtual void *forward(void *pVec1r32f = NULL);
 
-    virtual void *backward(void *pVoid);
+    virtual void *backward(void *vec1r32f = NULL);
 
     LinearLayer(int32 size_i, int32 size_w);
 };
 
-//class SigmoidLayer : ILayer {
-//public:
-//    virtual void *forward(cv::Matx *matx);
-//
-//    virtual void *backward(void *pVoid);
-//};
+class SigmoidLayer : ILayer {
+public:
+    virtual void *forward(void * = NULL);
+
+    virtual void *backward(void * vec1r32f = NULL);
+};
 
 class CardWatch {
 

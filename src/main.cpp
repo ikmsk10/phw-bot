@@ -25,9 +25,11 @@ int main(int argc, char *argv[])
 {
     printf("Starting phw-bot service...");
     LinearLayer l(5,5);
-    uchar data[5] = {2,3,4,5,0};
-    void * L2 = new cv::Mat1b(1,5,data);
-    l.forward(L2);
+    float data[5] = {0.9,0.9,0.7,0.6,0.5};
+    void * L2 = new cv::Mat1f(5,1,data);
+    std::cout << std::endl << *((cv::Mat1f*)L2) << endl;
+    cv::MatExpr * s = (cv::MatExpr*)l.forward(L2);
+    std::cout << s->a;
 //    cv::Mat1b * tmp = new cv::Mat1b(5,1);
 //    l.forward((void *)tmp);
 //    std::cout << l.forward((void *)tmp);
