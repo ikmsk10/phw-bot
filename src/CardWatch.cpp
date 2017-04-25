@@ -19,7 +19,7 @@ void *LinearLayer::backward(void *pVoid) {
 }
 
 void *LinearLayer::forward(void *matx) {
-    cv::Mat1b * vec = (cv::Mat1b*)matx ;
+    cv::Mat1b * vec = cv::Vec2b(1,2,3,4,5) ;
     cv::Mat1b bais(1,1);
 //    vec->push_back(cv::Mat1b(1,1,CV_32FC1));
 //    cv::Mat1b *result = new cv::Mat1b((*vec*(*theta)));
